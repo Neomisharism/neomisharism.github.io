@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Неомишаризм — Вики-база</title>
+    <title>Мишарская Ассоциация</title>
     <style>
         :root {
             --bg-color: #121214;
@@ -27,6 +27,43 @@
             color: var(--text-main);
             line-height: 1.6;
             padding: 20px;
+        }
+
+        /* Навигация и переключатель языков */
+        .top-bar {
+            max-width: 1100px;
+            margin: 0 auto 20px auto;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .lang-switcher {
+            display: flex;
+            background-color: var(--panel-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            padding: 8px 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .lang-btn:hover {
+            color: var(--text-main);
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .lang-btn.active {
+            background-color: var(--accent);
+            color: #fff;
         }
 
         .container {
@@ -180,13 +217,27 @@
             margin-bottom: 0;
         }
 
-        .spoiler-content ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
+        /* Специфичные списки */
+        .principles-list {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .principles-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+            font-size: 1.05rem;
         }
 
-        .spoiler-content li {
-            margin-bottom: 8px;
+        .principles-list li::before {
+            content: '•';
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
         }
 
         /* Изображения внутри контента */
@@ -232,7 +283,7 @@
             font-weight: 600;
         }
         
-        /* Спец-стиль для блока проектов */
+        /* Блок проектов */
         .projects-list {
             list-style: none !important;
             margin-left: 0 !important;
@@ -251,72 +302,80 @@
 </head>
 <body>
 
+<div class="top-bar">
+    <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="ms">MŞ</button>
+    </div>
+</div>
+
 <div class="container">
     
     <div class="main-content">
         <div class="header-title">
-            <img src="Picsart_26-05-21_18-09-08-571.png" alt="Флаг Неомишаризма" class="flag-icon">
-            <h1>Неомишаризм</h1>
+            <img src="Picsart_26-05-21_18-09-08-571.png" alt="Флаг" class="flag-icon">
+            <h1 data-t="mainTitle">Мишарская Ассоциация</h1>
         </div>
-        <div class="lead-text">
-            <strong>Неомишаризм</strong> — современная концепция, направленная на укрепление мишарской идентичности, взаимовыручку и развитие нашего сообщества в XXI веке.
-        </div>
-
-        <div class="spoiler-item">
-            <button class="spoiler-btn">Суть концепции</button>
-            <div class="spoiler-content">
-                <p>В современном мире наша идентичность сталкивается с угрозой размывания. Мы против того, чтобы живая культура сводилась исключительно к фольклору и поверхностным стереотипам. Такой подход превращает нацию в музейный экспонат.</p>
-                <p>Неомишаризм — это ответ на вызовы времени. Мы выбираем не пассивную ассимиляцию, а активное объединение. Наша цель — сплотить сообщество вокруг идеи практической поддержки друг друга, опираясь на историческое наследие, чтобы быть сильными и конкурентоспособными в современном обществе.</p>
-            </div>
+        <div class="lead-text" data-t="leadText">
+            <strong>Мишарская Ассоциация</strong> — это современное объединение, созданное для консолидации мишарского народа, поддержки друг друга и развития нашей культуры в условиях XXI века.
         </div>
 
         <div class="spoiler-item">
-            <button class="spoiler-btn">Базовые ценности</button>
+            <button class="spoiler-btn" data-t="btnPrinciples">Основные идеи</button>
             <div class="spoiler-content">
-                <p>Наши принципы строятся на здравом смысле и реальной пользе для каждого участника сообщества:</p>
-                <ul>
-                    <li><strong>Взаимовыручка на деле:</strong> Доверие строится на реальных поступках, а не на громких словах. Мы формируем среду, где мишари поддерживают друг друга в делах, бизнесе и жизни.</li>
-                    <li><strong>Опора на свои силы:</strong> Мы уважаем другие культуры и открыты к диалогу, но строим свое будущее самостоятельно. Мы самостоятельное сообщество со своим уникальным путем развития.</li>
-                    <li><strong>Интеллектуальный подход:</strong> Отказ от устаревших догм и иллюзий. Мы ценим образование, критическое мышление и современные технологии. Главный критерий любой идеи — ее реальная польза для нашего развития.</li>
-                    <li><strong>Внутреннее единство:</strong> Фокус на укреплении связей внутри нашего народа. Мы стремимся создать крепкий фундамент, который позволит нам сохранить свою идентичность в любых условиях.</li>
+                <ul class="principles-list">
+                    <li data-t="principle1">Идентичность не должна исчезать.</li>
+                    <li data-t="principle2">Культура может быть современной.</li>
+                    <li data-t="principle3">Язык — часть живого мышления.</li>
+                    <li data-t="principle4">Сообщество важнее изоляции.</li>
+                    <li data-t="principle5">Традиция должна развиваться, а не консервироваться.</li>
                 </ul>
             </div>
         </div>
 
         <div class="spoiler-item">
-            <button class="spoiler-btn">История</button>
+            <button class="spoiler-btn" data-t="btnIdeology">Неомишаризм (Наша база)</button>
             <div class="spoiler-content">
-                <p>Наш исторический характер сформировался в правобережье Волги (Мещере). Многовековой статус военно-служилого сословия выработал в мишарях высокий уровень самоорганизации, мобильности и сплочённости.</p>
+                <p data-t="ideologyText1">Неомишаризм — это идеологическая концепция нашей Ассоциации. В современном мире мы сталкиваемся с угрозой размывания. Мы против того, чтобы живая культура сводилась исключительно к фольклору и поверхностным стереотипам. Такой подход превращает нацию в музейный экспонат.</p>
+                <p data-t="ideologyText2">Мы выбираем не пассивную ассимиляцию, а активное объединение. Наша цель — сплотить сообщество вокруг идеи практической взаимовыручки, опираясь на историческое наследие, чтобы быть сильными и конкурентоспособными.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-item">
+            <button class="spoiler-btn" data-t="btnHistory">История</button>
+            <div class="spoiler-content">
+                <p data-t="historyText">Наш исторический характер сформировался в правобережье Волги (Мещере). Многовековой статус военно-служилого сословия выработал в мишарях высокий уровень самоорганизации, мобильности и сплочённости.</p>
                 
                 <div class="content-image-wrapper">
                     <img src="Picsart_26-05-21_21-58-05-369.jpg" alt="Карта расселения мишар" class="content-image">
-                    <div class="image-caption">Карта традиционного расселения мишар в Волго-Уральском регионе</div>
+                    <div class="image-caption" data-t="mapCaption">Карта традиционного расселения мишар в Волго-Уральском регионе</div>
                 </div>
 
                 <div class="table-wrapper">
                     <table>
                         <thead>
                             <tr>
-                                <th>Критерий</th>
-                                <th>Историческая характеристика</th>
+                                <th data-t="thCriteria">Критерий</th>
+                                <th data-t="thHistoryChar">Историческая характеристика</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong>Организация</strong></td>
-                                <td>Объединение по служилым городам (Касимов, Темников, Кадом).</td>
+                                <td data-t="tdOrg"><strong>Организация</strong></td>
+                                <td data-t="tdOrgDesc">Объединение по служилым городам (Касимов, Темников, Кадом).</td>
                             </tr>
                             <tr>
-                                <td><strong>Экономика</strong></td>
-                                <td>Индивидуальное вотчинное и поместное землевладение.</td>
+                                <td data-t="tdEcon"><strong>Экономика</strong></td>
+                                <td data-t="tdEconDesc">Индивидуальное вотчинное и поместное землевладение.</td>
                             </tr>
                             <tr>
-                                <td><strong>Самообеспечение</strong></td>
-                                <td>Полная самостоятельность: покупка вооружения и коней за свой счёт.</td>
+                                <td data-t="tdSelf"><strong>Самообеспечение</strong></td>
+                                <td data-t="tdSelfDesc">Полная самостоятельность: покупка вооружения и коней за свой счёт.</td>
                             </tr>
                             <tr>
-                                <td><strong>Военное дело</strong></td>
-                                <td>Охрана границ, основание крепостей и формирование войск.</td>
+                                <td data-t="tdMil"><strong>Военное дело</strong></td>
+                                <td data-t="tdMilDesc">Охрана границ, основание крепостей и формирование войск.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -325,16 +384,16 @@
         </div>
 
         <div class="spoiler-item">
-            <button class="spoiler-btn">Язык</button>
+            <button class="spoiler-btn" data-t="btnLanguage">Язык</button>
             <div class="spoiler-content">
-                <p>Западный (мишарский) диалект — это самодостаточная лингвистическая система, сохранившая уникальные черты древнетюркского языка. Особенности нашего говора — это не искажение, а естественный процесс развития языка, который формирует наш культурный код.</p>
+                <p data-t="langText">Западный (мишарский) диалект — это самодостаточная лингвистическая система. Особенности нашего говора — это не искажение, а естественный процесс развития языка, который формирует наш культурный код.</p>
                 <div class="table-wrapper">
                     <table>
                         <thead>
                             <tr>
-                                <th>Уровень</th>
-                                <th>Специфика явления</th>
-                                <th>Пример</th>
+                                <th data-t="thLevel">Уровень</th>
+                                <th data-t="thSpec">Специфика явления</th>
+                                <th data-t="thEx">Пример</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -365,13 +424,13 @@
         </div>
 
         <div class="spoiler-item">
-            <button class="spoiler-btn">Наши проекты</button>
+            <button class="spoiler-btn" data-t="btnProjects">Наши проекты</button>
             <div class="spoiler-content">
-                <p>Проект «Неомишаризм» находится на стадии активного формирования. В скором времени здесь появятся ссылки на наши официальные ресурсы для общения, координации и развития сообщества:</p>
+                <p data-t="projectsText">Ассоциация находится на стадии формирования. В скором времени здесь появятся ресурсы для общения, координации и развития сообщества:</p>
                 <ul class="projects-list">
-                    <li>📢 <strong>Telegram-канал</strong> (В разработке) — главные новости и статьи.</li>
-                    <li>💬 <strong>Telegram-чат</strong> (В разработке) — площадка для знакомства и взаимовыручки.</li>
-                    <li>📱 <strong>TikTok / YouTube</strong> (В разработке) — современный видеоконтент.</li>
+                    <li>📢 <strong>Telegram-канал</strong> <span data-t="inDev">(В разработке)</span> — главные новости и статьи.</li>
+                    <li>💬 <strong>Telegram-чат</strong> <span data-t="inDev2">(В разработке)</span> — площадка для знакомства и взаимовыручки.</li>
+                    <li>📱 <strong>TikTok / YouTube</strong> <span data-t="inDev3">(В разработке)</span> — современный видеоконтент.</li>
                 </ul>
             </div>
         </div>
@@ -379,26 +438,26 @@
     </div>
 
     <div class="infobox">
-        <h2>Неомишаризм</h2>
+        <h2 data-t="infoBoxTitle">Мишарская Ассоциация</h2>
         <div class="infobox-row">
-            <div class="infobox-label">Тип</div>
-            <div class="infobox-value">Идеология / Движение</div>
+            <div class="infobox-label" data-t="lblType">Тип</div>
+            <div class="infobox-value" data-t="valType">Организация / Сообщество</div>
         </div>
         <div class="infobox-row">
-            <div class="infobox-label">Направление</div>
-            <div class="infobox-value">Этномодернизм</div>
+            <div class="infobox-label" data-t="lblIdeology">Идеология</div>
+            <div class="infobox-value" data-t="valIdeology">Неомишаризм</div>
         </div>
         <div class="infobox-row">
-            <div class="infobox-label">Главная цель</div>
-            <div class="infobox-value">Консолидация сообщества</div>
+            <div class="infobox-label" data-t="lblGoal">Главная цель</div>
+            <div class="infobox-value" data-t="valGoal">Консолидация и развитие</div>
         </div>
         <div class="infobox-row">
-            <div class="infobox-label">Основа</div>
+            <div class="infobox-label" data-t="lblBase">Основа</div>
             <div class="infobox-value">
                 <ul>
-                    <li>Самодостаточность</li>
-                    <li>Взаимовыручка</li>
-                    <li>Прагматизм</li>
+                    <li data-t="valBase1">Самодостаточность</li>
+                    <li data-t="valBase2">Взаимовыручка</li>
+                    <li data-t="valBase3">Прагматизм</li>
                 </ul>
             </div>
         </div>
@@ -407,18 +466,128 @@
 </div>
 
 <script>
+    // --- Логика аккордеона ---
     document.querySelectorAll('.spoiler-btn').forEach(button => {
         button.addEventListener('click', () => {
             const item = button.parentElement;
             const content = item.querySelector('.spoiler-content');
-            
             item.classList.toggle('active');
-            
             if (item.classList.contains('active')) {
                 content.style.display = 'block';
             } else {
                 content.style.display = 'none';
             }
+        });
+    });
+
+    // --- Логика переключения языков ---
+    // Здесь хранится словарь переводов. Ключ (например, 'mainTitle') соответствует атрибуту data-t в HTML.
+    const translations = {
+        ru: {
+            mainTitle: "Мишарская Ассоциация",
+            leadText: "<strong>Мишарская Ассоциация</strong> — это современное объединение, созданное для консолидации мишарского народа, поддержки друг друга и развития нашей культуры в условиях XXI века.",
+            btnPrinciples: "Основные идеи",
+            principle1: "Идентичность не должна исчезать.",
+            principle2: "Культура может быть современной.",
+            principle3: "Язык — часть живого мышления.",
+            principle4: "Сообщество важнее изоляции.",
+            principle5: "Традиция должна развиваться, а не консервироваться.",
+            btnIdeology: "Неомишаризм (Наша база)",
+            btnHistory: "История",
+            btnLanguage: "Язык",
+            btnProjects: "Наши проекты",
+            infoBoxTitle: "Мишарская Ассоциация",
+            lblType: "Тип",
+            valType: "Организация / Сообщество",
+            lblIdeology: "Идеология",
+            valIdeology: "Неомишаризм",
+            lblGoal: "Главная цель",
+            valGoal: "Консолидация и развитие",
+            lblBase: "Основа",
+            valBase1: "Самодостаточность",
+            valBase2: "Взаимовыручка",
+            valBase3: "Прагматизм",
+            inDev: "(В разработке)",
+            inDev2: "(В разработке)",
+            inDev3: "(В разработке)"
+            // Остальные длинные тексты можно добавить сюда по аналогии
+        },
+        en: {
+            mainTitle: "Mishar Association",
+            leadText: "<strong>Mishar Association</strong> is a modern organization created to consolidate the Mishar people, provide mutual support, and develop our culture in the 21st century.",
+            btnPrinciples: "Main Ideas",
+            principle1: "Identity must not disappear.",
+            principle2: "Culture can be modern.",
+            principle3: "Language is a part of living thought.",
+            principle4: "Community is more important than isolation.",
+            principle5: "Traditions must evolve, not be conserved.",
+            btnIdeology: "Neomisharism (Our Foundation)",
+            btnHistory: "History",
+            btnLanguage: "Language",
+            btnProjects: "Our Projects",
+            infoBoxTitle: "Mishar Association",
+            lblType: "Type",
+            valType: "Organization / Community",
+            lblIdeology: "Ideology",
+            valIdeology: "Neomisharism",
+            lblGoal: "Main Goal",
+            valGoal: "Consolidation and Development",
+            lblBase: "Foundation",
+            valBase1: "Self-sufficiency",
+            valBase2: "Mutual assistance",
+            valBase3: "Pragmatism",
+            inDev: "(In development)",
+            inDev2: "(In development)",
+            inDev3: "(In development)"
+        },
+        ms: {
+            mainTitle: "Мишәр Ассоциациясе",
+            leadText: "<strong>Мишәр Ассоциациясе</strong> — ул мишәр халкын берләштерү, бер-береңә ярдәм итү һәм XXI гасыр шартларында мәдәниятебезне үстерү өчен төзелгән заманча оешма.",
+            btnPrinciples: "Төп идеяләр",
+            principle1: "Үзаң югалырга тиеш түгел.",
+            principle2: "Мәдәният заманча була ала.",
+            principle3: "Тел — тере фикерләүнең бер өлеше.",
+            principle4: "Җәмгыять изоляциядән мөһимрәк.",
+            principle5: "Традиция катып калмыйча, үсәргә тиеш.",
+            btnIdeology: "Неомишаризм (Нигезебез)",
+            btnHistory: "Тарих",
+            btnLanguage: "Тел",
+            btnProjects: "Проектларыбыз",
+            infoBoxTitle: "Мишәр Ассоциациясе",
+            lblType: "Төре",
+            valType: "Оешма / Җәмгыять",
+            lblIdeology: "Идеология",
+            valIdeology: "Неомишаризм",
+            lblGoal: "Төп максат",
+            valGoal: "Берләшү һәм үсеш",
+            lblBase: "Нигез",
+            valBase1: "Мөстәкыйльлек",
+            valBase2: "Үзара ярдәм",
+            valBase3: "Прагматизм",
+            inDev: "(Эшләнә)",
+            inDev2: "(Эшләнә)",
+            inDev3: "(Эшләнә)"
+        }
+    };
+
+    const langBtns = document.querySelectorAll('.lang-btn');
+    
+    langBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Убираем активный класс у всех кнопок
+            langBtns.forEach(b => b.classList.remove('active'));
+            // Добавляем активный класс нажатой
+            btn.classList.add('active');
+            
+            const currentLang = btn.getAttribute('data-lang');
+            
+            // Находим все элементы с атрибутом data-t и меняем их текст
+            document.querySelectorAll('[data-t]').forEach(el => {
+                const key = el.getAttribute('data-t');
+                if (translations[currentLang] && translations[currentLang][key]) {
+                    el.innerHTML = translations[currentLang][key];
+                }
+            });
         });
     });
 </script>
