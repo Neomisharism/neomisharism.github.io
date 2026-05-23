@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://neomisharism.github.io/sitemap.xml
