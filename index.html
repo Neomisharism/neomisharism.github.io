@@ -8,22 +8,22 @@
     <meta name="google-site-verification" content="-lHr9mjoYrvyYNorNFi0lqS7IYLrgh0QczGBFUib02g" />
     
     <title>Татарская Ассоциация</title>
-    <meta name="description" content="Современная гражданская платформа, созданная для консолидации татарского народа, системного развития культуры и сохранения языка.">
+    <meta name="description" content="Гражданская платформа для консолидации татарского народа, сохранения культурно-языкового наследия и развития Волго-Уральского макрорегиона.">
     
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://neotatarism.github.io/">
     <meta property="og:title" content="Татарская Ассоциация">
-    <meta property="og:description" content="Современная гражданская платформа, созданная для консолидации татарского народа, системного развития культуры и сохранения языка.">
+    <meta property="og:description" content="Гражданская платформа для консолидации татарского народа, сохранения культурно-языкового наследия и развития Волго-Уральского макрорегиона.">
 
     <style>
         :root {
-            --bg-color: #121214;
-            --panel-bg: #1a1a1e;
-            --text-main: #f0f0f3;
-            --text-muted: #a0a0aa;
-            --accent: #10b981;
-            --accent-hover: #34d399;
-            --border: #2d2d34;
+            --bg-color: #0d0d0f;
+            --panel-bg: #141417;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent: #00ff00;
+            --accent-muted: rgba(0, 255, 0, 0.1);
+            --border: #222227;
         }
 
         * {
@@ -36,13 +36,13 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
-            line-height: 1.6;
-            padding: 20px;
+            line-height: 1.5;
+            padding: 16px;
         }
 
         .top-bar {
-            max-width: 1100px;
-            margin: 0 auto 20px auto;
+            max-width: 1140px;
+            margin: 0 auto 24px auto;
             display: flex;
             justify-content: flex-end;
         }
@@ -51,7 +51,7 @@
             display: flex;
             background-color: var(--panel-bg);
             border: 1px solid var(--border);
-            border-radius: 6px;
+            border-radius: 8px;
             overflow: hidden;
         }
 
@@ -60,11 +60,11 @@
             border: none;
             border-right: 1px solid var(--border);
             color: var(--text-muted);
-            padding: 8px 15px;
-            font-size: 0.9rem;
+            padding: 8px 16px;
+            font-size: 0.85rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.2s ease;
         }
         
         .lang-btn:last-child {
@@ -73,152 +73,167 @@
 
         .lang-btn:hover {
             color: var(--text-main);
-            background-color: rgba(255, 255, 255, 0.05);
+            background-color: rgba(255, 255, 255, 0.03);
         }
 
         .lang-btn.active {
-            background-color: var(--accent);
-            color: #121214;
+            background-color: var(--text-main);
+            color: var(--bg-color);
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1140px;
             margin: 0 auto;
-            display: flex;
-            flex-direction: column-reverse;
-            gap: 30px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
         }
 
-        @media (min-width: 768px) {
+        @media (min-width: 868px) {
             .container {
-                flex-direction: row;
+                grid-template-columns: 1fr 340px;
                 align-items: flex-start;
             }
-            .main-content {
-                flex: 1;
-            }
         }
 
+        /* Инфобокс адаптивный: на мобилках сверху, на десктопе справа */
         .infobox {
             background-color: var(--panel-bg);
             border: 1px solid var(--border);
-            border-top: 4px solid var(--accent);
-            border-radius: 6px;
+            border-radius: 12px;
             padding: 20px;
             width: 100%;
         }
 
-        @media (min-width: 768px) {
+        @media (min-width: 868px) {
             .infobox {
-                width: 320px;
-                flex-shrink: 0;
+                grid-column: 2;
                 position: sticky;
-                top: 20px;
+                top: 24px;
+            }
+            .main-content {
+                grid-column: 1;
             }
         }
 
+        /* Прямоугольный красивый флаг 3:2 на базе Picsart_26-05-29_13-56-08-737.jpg */
         .infobox-flag {
             width: 100%;
             height: auto;
-            aspect-ratio: 1 / 1;
-            border-radius: 4px;
+            aspect-ratio: 3 / 2;
+            border-radius: 6px;
             border: 1px solid var(--border);
-            margin-bottom: 15px;
+            margin-bottom: 16px;
             overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
 
         .infobox h2 {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 16px;
             text-align: center;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 10px;
+            letter-spacing: 0.5px;
         }
 
         .infobox-row {
             display: flex;
             justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.03);
-            font-size: 0.9rem;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.02);
+            font-size: 0.85rem;
+        }
+
+        .infobox-row:last-child {
+            border-bottom: none;
         }
 
         .infobox-label {
             color: var(--text-muted);
-            font-weight: 500;
         }
 
         .infobox-value {
             text-align: right;
+            font-weight: 500;
             max-width: 60%;
         }
 
-        .header-title {
-            margin-bottom: 15px;
+        .header-title h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
         }
 
-        .main-content h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
+        @media (min-width: 768px) {
+            .header-title h1 { font-size: 2.5rem; }
         }
 
+        /* Аккуратное, не громоздкое определение */
         .lead-text {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--text-main);
-            margin-bottom: 30px;
-            padding-left: 15px;
+            margin-bottom: 24px;
+            padding: 16px;
+            background: linear-gradient(90deg, var(--accent-muted), transparent);
             border-left: 3px solid var(--accent);
+            border-radius: 0 8px 8px 0;
         }
 
         .spoiler-item {
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             border: 1px solid var(--border);
-            border-radius: 4px;
+            border-radius: 8px;
             background-color: var(--panel-bg);
             overflow: hidden;
+            transition: border-color 0.2s ease;
+        }
+
+        .spoiler-item:hover {
+            border-color: #2e2e35;
         }
 
         .spoiler-btn {
             width: 100%;
             background: none;
             border: none;
-            padding: 15px 20px;
+            padding: 16px 20px;
             text-align: left;
             color: var(--text-main);
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: background-color 0.2s;
-        }
-
-        .spoiler-btn:hover {
-            background-color: rgba(255, 255, 255, 0.02);
         }
 
         .spoiler-btn::after {
-            content: '▼';
-            font-size: 0.8rem;
-            color: var(--accent);
-            transition: transform 0.2s;
+            content: '→';
+            font-size: 1rem;
+            color: var(--text-muted);
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .spoiler-item.active {
+            border-color: rgba(255,255,255,0.1);
         }
 
         .spoiler-item.active .spoiler-btn::after {
-            transform: rotate(180deg);
+            transform: rotate(90deg);
+            color: var(--accent);
         }
 
         .spoiler-content {
             display: none;
-            padding: 20px;
-            border-top: 1px solid var(--border);
-            color: var(--text-main);
-            font-size: 0.95rem;
+            padding: 0 20px 20px 20px;
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.6;
         }
 
         .spoiler-content p {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .spoiler-content p:last-child {
@@ -227,101 +242,103 @@
 
         .custom-list {
             list-style: none;
-            margin-bottom: 15px;
         }
         
         .custom-list li {
+            margin-bottom: 12px;
+            padding-left: 18px;
             position: relative;
-            padding-left: 20px;
-            margin-bottom: 15px;
         }
 
         .custom-list li::before {
-            content: '•';
+            content: '—';
             color: var(--accent);
-            font-weight: bold;
-            font-size: 1.5rem;
             position: absolute;
             left: 0;
-            top: -6px;
         }
 
         .table-wrapper {
             overflow-x: auto;
-            margin-top: 15px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-align: left;
         }
 
         th, td {
-            padding: 10px 12px;
-            border: 1px solid var(--border);
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
         }
 
         th {
-            background-color: rgba(255,255,255,0.04);
-            color: var(--text-muted);
+            background-color: rgba(255,255,255,0.01);
+            color: var(--text-main);
             font-weight: 600;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
         }
         
         .projects-list {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
         }
         
         .projects-list li {
-            background-color: rgba(255,255,255,0.03);
-            padding: 10px 15px;
-            border-radius: 4px;
-            border-left: 3px solid var(--accent);
+            background-color: rgba(255,255,255,0.01);
+            padding: 12px 16px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
         }
 
         .social-links {
             display: flex;
-            gap: 15px;
-            margin-top: 30px;
+            gap: 12px;
+            margin-top: 24px;
             flex-wrap: wrap;
         }
 
         .social-btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 12px 24px;
+            justify-content: center;
+            padding: 12px 20px;
             border-radius: 8px;
             text-decoration: none;
             color: #ffffff;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.9rem;
+            flex: 1;
+            min-width: 160px;
             transition: opacity 0.2s, transform 0.2s;
         }
 
         .social-btn:hover {
             opacity: 0.9;
-            transform: translateY(-2px);
+            transform: translateY(-1px);
         }
 
-        .btn-tg { background-color: #2AABEE; }
-        .btn-tt { background-color: #000000; border: 1px solid #333; }
+        .btn-tg { background-color: #24A1DE; }
+        .btn-tt { background-color: #000000; border: 1px solid var(--border); }
 
         .scroll-to-top-btn {
             position: fixed;
-            bottom: 85px;
-            right: 20px;
-            width: 46px;
-            height: 46px;
+            bottom: 24px;
+            right: 24px;
+            width: 40px;
+            height: 40px;
             background-color: var(--panel-bg);
             border: 1px solid var(--border);
-            color: var(--accent);
-            font-size: 1.3rem;
-            font-weight: bold;
+            color: var(--text-main);
+            font-size: 1rem;
             border-radius: 50%;
             cursor: pointer;
             display: flex;
@@ -329,8 +346,8 @@
             justify-content: center;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.3s, visibility 0.3s, background-color 0.2s;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
             z-index: 1000;
         }
 
@@ -351,12 +368,47 @@
 </div>
 
 <div class="container">
+    <!-- ИНФОБОКС ТЕПЕРЬ СТРУКТУРНО ИДЕТ ПЕРВЫМ ДЛЯ ПРАВИЛЬНОГО СТЭКИНГА НА МОБИЛЬНЫХ -->
+    <div class="infobox">
+        <div class="infobox-flag">
+            <!-- Идеальный прямоугольный флаг 3:2 на основе Picsart_26-05-29_13-56-08-737.jpg -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+                <rect width="600" height="400" fill="#ffffff"/>
+                <rect width="280" height="180" fill="#00ff00"/>
+                <rect x="320" y="220" width="280" height="180" fill="#00ff00"/>
+                <rect x="280" width="40" height="400" fill="#000000"/>
+                <rect y="180" width="600" height="40" fill="#000000"/>
+            </svg>
+        </div>
+        <h2 data-t="infoTitle">Татарская Ассоциация</h2>
+        <div class="infobox-row">
+            <div class="infobox-label" data-t="lblType">Тип</div>
+            <div class="infobox-value" data-t="valType">Гражданская платформа</div>
+        </div>
+        <div class="infobox-row">
+            <div class="infobox-label" data-t="lblBase">Основа</div>
+            <div class="infobox-value" data-t="valBase">Самоорганизация, прагматизм</div>
+        </div>
+        <div class="infobox-row">
+            <div class="infobox-label" data-t="lblGoal">Цель</div>
+            <div class="infobox-value" data-t="valGoal">Развитие макрорегиона</div>
+        </div>
+        <div class="infobox-row">
+            <div class="infobox-label" data-t="lblConcept">Концепция</div>
+            <div class="infobox-value" data-t="valConcept">Неотатаризм</div>
+        </div>
+        <div class="infobox-row">
+            <div class="infobox-label" data-t="lblPrin">Принцип</div>
+            <div class="infobox-value" data-t="valPrin">Созидание, легальность</div>
+        </div>
+    </div>
+
     <div class="main-content">
         <div class="header-title">
             <h1 data-t="mainTitle">Татарская Ассоциация</h1>
         </div>
-        <div class="lead-text" data-t="leadText">
-            <strong>Татарская Ассоциация</strong> — современная гражданская платформа, созданная для консолидации татарского народа, системного развития культуры, сохранения языка и выстраивания механизмов взаимовыручки.
+        <div class="lead-text" id="leadTextContainer" data-t="leadText">
+            Гражданская платформа для консолидации татарского народа, сохранения культурно-языкового наследия и развития Волго-Уральского макрорегиона.
         </div>
 
         <div class="spoiler-item">
@@ -387,7 +439,7 @@
                 <p data-t="neo1"><strong>Неотатаризм — идеологический фундамент Ассоциации.</strong></p>
                 <p data-t="neo2">Большинство локальных культур сегодня оказались перед выбором: раствориться в глобальном потоке или уйти в архаику. Оба пути ведут в тупик.</p>
                 <p data-t="neo3">Неотатаризм — это третий путь. Культура как живая среда, способная развиваться и давать человеку реальную опору. Четыре наши опоры:</p>
-                <ul style="list-style: disc; margin-left: 20px; margin-bottom: 15px;">
+                <ul style="list-style: disc; margin-left: 20px; margin-bottom: 15px; padding-left: 5px;">
                     <li data-t="neoL1"><strong>Историческая грамотность</strong> — трезвый взгляд на прошлое</li>
                     <li data-t="neoL2"><strong>Личное развитие</strong> — образование, дисциплина</li>
                     <li data-t="neoL3"><strong>Прагматизм</strong> — конкретные решения</li>
@@ -459,44 +511,11 @@
 
         <div class="social-links">
             <a href="https://t.me/ТВОЙ_КАНАЛ" target="_blank" class="social-btn btn-tg">
-                <span data-t="btnJoinTg">Перейти в Telegram</span>
+                <span data-t="btnJoinTg">Telegram</span>
             </a>
             <a href="https://tiktok.com/@ТВОЙ_ПРОФИЛЬ" target="_blank" class="social-btn btn-tt">
                 <span data-t="btnJoinTt">TikTok</span>
             </a>
-        </div>
-    </div>
-
-    <div class="infobox">
-        <div class="infobox-flag">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
-                <rect width="500" height="500" fill="#ffffff"/>
-                <rect width="225" height="225" fill="#00ff00"/>
-                <rect x="275" y="275" width="225" height="225" fill="#00ff00"/>
-                <rect x="225" width="50" height="500" fill="#000000"/>
-                <rect y="225" width="500" height="50" fill="#000000"/>
-            </svg>
-        </div>
-        <h2 data-t="infoTitle">Татарская Ассоциация</h2>
-        <div class="infobox-row">
-            <div class="infobox-label" data-t="lblType">Тип</div>
-            <div class="infobox-value" data-t="valType">Гражданская платформа</div>
-        </div>
-        <div class="infobox-row">
-            <div class="infobox-label" data-t="lblBase">Основа</div>
-            <div class="infobox-value" data-t="valBase">Самоорганизация, прагматизм</div>
-        </div>
-        <div class="infobox-row">
-            <div class="infobox-label" data-t="lblGoal">Цель</div>
-            <div class="infobox-value" data-t="valGoal">Консолидация и развитие региона</div>
-        </div>
-        <div class="infobox-row">
-            <div class="infobox-label" data-t="lblConcept">Концепция</div>
-            <div class="infobox-value" data-t="valConcept">Неотатаризм</div>
-        </div>
-        <div class="infobox-row">
-            <div class="infobox-label" data-t="lblPrin">Принцип</div>
-            <div class="infobox-value" data-t="valPrin">Созидание, легальность</div>
         </div>
     </div>
 </div>
@@ -504,6 +523,7 @@
 <button id="scrollTopBtn" class="scroll-to-top-btn" title="Наверх">↑</button>
 
 <script>
+    // Спойлеры / Аккордеон
     document.querySelectorAll('.spoiler-btn').forEach(button => {
         button.addEventListener('click', () => {
             const item = button.parentElement;
@@ -513,10 +533,11 @@
         });
     });
 
+    // Словари точных и выверенных переводов
     const translations = {
         ru: {
             mainTitle: "Татарская Ассоциация",
-            leadText: "<strong>Татарская Ассоциация</strong> — современная гражданская платформа, созданная для консолидации татарского народа, системного развития культуры, сохранения языка и выстраивания механизмов взаимовыручки.",
+            leadText: "Гражданская платформа для консолидации татарского народа, сохранения культурно-языкового наследия и развития Волго-Уральского макрорегиона.",
             btnContext: "Контекст",
             ctx1: "Татарская культура сегодня находится под давлением с двух сторон: с одной — размывание и ассимиляция, с другой — консервация и превращение в фольклор. Ни то ни другое не даёт народу будущего.",
             ctx2: "Молодое поколение теряет связь с идентичностью не потому, что она ему неинтересна — а потому что ей не предлагают современного языка и живого сообщества.",
@@ -529,7 +550,7 @@
             idea5: "<strong>Созидание и легальность.</strong> Интеллект, образование, дисциплина и строгое соблюдение законов — наш единственный инструмент.",
             btnNeo: "Неотатаризм",
             neo1: "<strong>Неотатаризм — идеологический фундамент Ассоциации.</strong>",
-            neo2: "Большинство локальных культур сегодня оказались перед выбором: раствориться в глобальном потоке или уйти в архаику. Оба пути ведут в тупик.",
+            neo2: "Большинство локальных культуры сегодня оказались перед выбором: раствориться в глобальном потоке или уйти в архаику. Оба пути ведут в тупик.",
             neo3: "Неотатаризм — это третий путь. Культура как живая среда, способная развиваться и давать человеку реальную опору. Четыре наши опоры:",
             neoL1: "<strong>Историческая грамотность</strong> — трезвый взгляд на прошлое",
             neoL2: "<strong>Личное развитие</strong> — образование, дисциплина",
@@ -565,17 +586,17 @@
             lblBase: "Основа",
             valBase: "Самоорганизация, прагматизм",
             lblGoal: "Цель",
-            valGoal: "Консолидация и развитие региона",
+            valGoal: "Развитие макрорегиона",
             lblConcept: "Концепция",
             valConcept: "Неотатаризм",
             lblPrin: "Принцип",
             valPrin: "Созидание, легальность",
-            btnJoinTg: "Перейти в Telegram",
+            btnJoinTg: "Telegram",
             btnJoinTt: "TikTok"
         },
         en: {
             mainTitle: "Tatar Association",
-            leadText: "<strong>Tatar Association</strong> is a modern civic platform created to consolidate the Tatar people, systematically develop the culture, preserve the language, and build mechanisms for mutual support.",
+            leadText: "A civic platform for the consolidation of the Tatar people, preservation of cultural and linguistic heritage, and the development of the Volga-Ural macroregion.",
             btnContext: "Context",
             ctx1: "Tatar culture today is under pressure: assimilation on one side, and conservation into folklore on the other. Neither gives the nation a future.",
             ctx2: "The younger generation loses touch with identity not because they lack interest, but because they are not offered a modern language and a living community.",
@@ -595,7 +616,7 @@
             neoL3: "<strong>Pragmatism</strong> — concrete solutions",
             neoL4: "<strong>Solidarity</strong> — mutual support",
             neo4: "Neotatarism doesn't answer 'who were our ancestors', it answers <strong>'who we want to be'</strong>.",
-            btnPortrait: "Participant Portrait",
+            btnPortrait: "Participant Profile",
             port1: "The Tatar Association is for those who:",
             portL1: "feel a connection to Tatar culture, history, or language",
             portL2: "are ready to develop and contribute to the community",
@@ -624,17 +645,17 @@
             lblBase: "Basis",
             valBase: "Self-organization, pragmatism",
             lblGoal: "Goal",
-            valGoal: "Consolidation and regional development",
+            valGoal: "Macroregion development",
             lblConcept: "Concept",
             valConcept: "Neotatarism",
             lblPrin: "Principle",
             valPrin: "Creation, legality",
-            btnJoinTg: "Join Telegram",
+            btnJoinTg: "Telegram",
             btnJoinTt: "TikTok"
         },
         tat: {
             mainTitle: "Татар Ассоциациясе",
-            leadText: "<strong>Татар Ассоциациясе</strong> — татар халкын берләштерү, мәдәниятне системалы үстерү, телне саклау һәм үзара ярдәмләшү механизмнарын төзү өчен булдырылган заманча гражданнар мәйданчыгы.",
+            leadText: "Татар халкын берләштерү, мәдәни-тел мирасын саклау һәм Идел-Урал макротөбәген үстерү өчен гражданнар мәйданчыгы.",
             btnContext: "Контекст",
             ctx1: "Бүгенге көндә татар мәдәнияте ике яктан басым астында: бер яктан — ассимиляция, икенче яктан — фольклорга әйләнү. Боларның берсе дә халыкка киләчәк бирми.",
             ctx2: "Яшь буын кемлеге белән элемтәне ул аңа кызык булмаганга түгел, ә аңа заманча тел һәм тере җәмгыять тәкъдим ителмәгәнгә югалта.",
@@ -683,13 +704,13 @@
             lblBase: "Нигез",
             valBase: "Үз-үзеңне оештыру, прагматизм",
             lblGoal: "Максат",
-            valGoal: "Берләшү һәм төбәкне үстерү",
+            valGoal: "Макротөбәкне үстерү",
             lblConcept: "Концепция",
             valConcept: "Неотатаризм",
             lblPrin: "Принцип",
             valPrin: "Иҗат, законлылык",
-            btnJoinTg: "Telegram-га күчү",
-            btnJoinTt: "TikTok-та карау"
+            btnJoinTg: "Telegram",
+            btnJoinTt: "TikTok"
         }
     };
 
@@ -721,23 +742,19 @@
         });
     });
 
+    // Кнопка Наверх
     const scrollTopBtn = document.getElementById("scrollTopBtn");
-
     window.addEventListener("scroll", () => {
-        if (window.scrollY > 400) {
+        if (window.scrollY > 300) {
             scrollTopBtn.classList.add("show");
         } else {
             scrollTopBtn.classList.remove("show");
         }
     });
-
     scrollTopBtn.addEventListener("click", () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+        window.scrollTo({ top: 0, behavior: "smooth" });
     });
 </script>
 
 </body>
-    </html>
+</html>
