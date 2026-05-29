@@ -4,19 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <meta name="yandex-verification" content="12bc804ffc662345" />
-    <meta name="google-site-verification" content="-lHr9mjoYrvyYNorNFi0lqS7IYLrgh0QczGBFUib02g" />
-    
-    <title>Мишарская Ассоциация</title>
-    <meta name="description" content="Современное сообщество, созданное для объединения мишар, развития культуры, языка и взаимной поддержки в условиях XXI века.">
-    
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://neomisharism.github.io/">
-    <meta property="og:title" content="Мишарская Ассоциация">
-    <meta property="og:description" content="Современное сообщество, созданное для объединения мишар, развития культуры, языка и взаимной поддержки в условиях XXI века.">
-    <meta property="og:image" content="Picsart_26-05-21_18-09-08-571 (1).png">
-
-    <link rel="icon" type="image/png" href="Picsart_26-05-21_18-09-08-571 (1).png"> 
+    <title>Татар Ассоциациясе</title>
+    <meta name="description" content="Гражданское сообщество татарской молодёжи, построенное не на ностальгии, а на действии.">
     
     <style>
         :root {
@@ -24,8 +13,9 @@
             --panel-bg: #1a1a1e;
             --text-main: #f0f0f3;
             --text-muted: #a0a0aa;
-            --accent: #8b5cf6;
-            --accent-hover: #a78bfa;
+            /* Измененный акцент: строгий неоново-зеленый */
+            --accent: #10b981;
+            --accent-hover: #34d399;
             --border: #2d2d34;
         }
 
@@ -43,7 +33,6 @@
             padding: 20px;
         }
 
-        /* Навигация и переключатель языков */
         .top-bar {
             max-width: 1100px;
             margin: 0 auto 20px auto;
@@ -82,7 +71,7 @@
 
         .lang-btn.active {
             background-color: var(--accent);
-            color: #fff;
+            color: #121214;
         }
 
         .container {
@@ -103,7 +92,6 @@
             }
         }
 
-        /* Инфобокс (Правая панель) */
         .infobox {
             background-color: var(--panel-bg);
             border: 1px solid var(--border);
@@ -125,12 +113,11 @@
         .infobox-flag {
             width: 100%;
             height: auto;
-            aspect-ratio: 5 / 3; /* Резервируем место под пропорции флага */
+            aspect-ratio: 5 / 3;
             border-radius: 4px;
             border: 1px solid var(--border);
             margin-bottom: 15px;
-            user-select: none; /* Защита от долгого тапа */
-            -webkit-user-drag: none;
+            background-color: #000; /* Заглушка под ваш логотип/флаг */
         }
 
         .infobox h2 {
@@ -159,7 +146,6 @@
             max-width: 60%;
         }
 
-        /* Главный контент */
         .header-title {
             margin-bottom: 15px;
         }
@@ -177,7 +163,6 @@
             border-left: 3px solid var(--accent);
         }
 
-        /* Аккордеон (Разворачивающиеся плашки) */
         .spoiler-item {
             margin-bottom: 12px;
             border: 1px solid var(--border);
@@ -233,21 +218,18 @@
             margin-bottom: 0;
         }
 
-        /* Специфичные списки */
-        .principles-list {
+        .custom-list {
             list-style: none;
-            margin-left: 0;
             margin-bottom: 15px;
         }
         
-        .principles-list li {
+        .custom-list li {
             position: relative;
             padding-left: 20px;
-            margin-bottom: 10px;
-            font-size: 1.05rem;
+            margin-bottom: 15px;
         }
 
-        .principles-list li::before {
+        .custom-list li::before {
             content: '•';
             color: var(--accent);
             font-weight: bold;
@@ -256,39 +238,7 @@
             left: 0;
             top: -6px;
         }
-        
-        .ideology-list {
-            list-style: disc;
-            margin-left: 20px;
-            margin-bottom: 15px;
-        }
-        
-        .ideology-list li {
-            margin-bottom: 5px;
-        }
 
-        /* Изображения внутри контента */
-        .content-image-wrapper {
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        .content-image {
-            max-width: 100%;
-            height: auto;
-            aspect-ratio: 4 / 3; /* Примерное соотношение для карты, предотвращает прыжки контента */
-            border-radius: 6px;
-            border: 1px solid var(--border);
-        }
-
-        .image-caption {
-            margin-top: 8px;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-style: italic;
-        }
-
-        /* Таблицы */
         .table-wrapper {
             overflow-x: auto;
             margin-top: 15px;
@@ -312,10 +262,8 @@
             font-weight: 600;
         }
         
-        /* Блок проектов */
         .projects-list {
-            list-style: none !important;
-            margin-left: 0 !important;
+            list-style: none;
             display: flex;
             flex-direction: column;
             gap: 10px;
@@ -328,7 +276,6 @@
             border-left: 3px solid var(--accent);
         }
 
-        /* Кнопки соцсетей */
         .social-links {
             display: flex;
             gap: 15px;
@@ -354,14 +301,8 @@
             transform: translateY(-2px);
         }
 
-        .btn-tg {
-            background-color: #2AABEE;
-        }
-
-        .btn-tt {
-            background-color: #000000;
-            border: 1px solid #333;
-        }
+        .btn-tg { background-color: #2AABEE; }
+        .btn-tt { background-color: #000000; border: 1px solid #333; }
 
         .social-icon {
             width: 20px;
@@ -369,10 +310,9 @@
             fill: currentColor;
         }
 
-        /* Умная кнопка НАВЕРХ */
         .scroll-to-top-btn {
             position: fixed;
-            bottom: 85px; /* Идеальная высота над панелью мобильных браузеров */
+            bottom: 85px;
             right: 20px;
             width: 46px;
             height: 46px;
@@ -397,11 +337,6 @@
             opacity: 1;
             visibility: visible;
         }
-
-        .scroll-to-top-btn:active {
-            background-color: rgba(255, 255, 255, 0.05);
-            color: var(--accent-hover);
-        }
     </style>
 </head>
 <body>
@@ -410,62 +345,74 @@
     <div class="lang-switcher">
         <button class="lang-btn" data-lang="ru">RU</button>
         <button class="lang-btn" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="ms-ts">MŞ (Ц)</button>
-        <button class="lang-btn" data-lang="ms-ch">MŞ (Ч)</button>
+        <button class="lang-btn" data-lang="tat">TAT</button>
     </div>
 </div>
 
 <div class="container">
-    
     <div class="main-content">
         <div class="header-title">
-            <h1 data-t="mainTitle">Мишарская Ассоциация</h1>
+            <h1 data-t="mainTitle">Татар Ассоциациясе</h1>
         </div>
         <div class="lead-text" data-t="leadText">
-            <strong>Мишарская Ассоциация</strong> — современное сообщество, созданное для объединения мишар, развития культуры, языка и взаимной поддержки в условиях XXI века.
+            <strong>Татар Ассоциациясе</strong> — гражданское сообщество татарской молодёжи, построенное не на ностальгии, а на действии. Мы не музей и не политическая партия. Мы — люди, которые считают свою идентичность силой, а не архивом.
         </div>
 
         <div class="spoiler-item">
-            <button class="spoiler-btn" data-t="btnPrinciples">Основные идеи</button>
+            <button class="spoiler-btn" data-t="btnContext">Контекст</button>
             <div class="spoiler-content">
-                <ul class="principles-list">
-                    <li data-t="p1">Идентичность не должна исчезать.</li>
-                    <li data-t="p2">Культура может быть современной.</li>
-                    <li data-t="p3">Язык — часть живого мышления.</li>
-                    <li data-t="p4">Сообщество важнее изоляции.</li>
-                    <li data-t="p5">Традиция должна развиваться, а не консервироваться.</li>
+                <p data-t="ctx1">Татарская культура сегодня находится под давлением с двух сторон: с одной — размывание и ассимиляция, с другой — консервация и превращение в фольклор. Ни то ни другое не даёт народу будущего.</p>
+                <p data-t="ctx2">Молодое поколение теряет связь с идентичностью не потому, что она ему неинтересна — а потому что ей не предлагают современного языка и живого сообщества.</p>
+                <p data-t="ctx3">Татар Ассоциациясе создана именно для этого: стать точкой сборки для тех, кто готов строить, а не только помнить.</p>
+            </div>
+        </div>
+
+        <div class="spoiler-item">
+            <button class="spoiler-btn" data-t="btnIdeas">Основные идеи</button>
+            <div class="spoiler-content">
+                <ul class="custom-list">
+                    <li data-t="idea1"><strong>Единство в многообразии.</strong> Татарский народ исторически складывается из нескольких крупных ветвей. Мы не стираем различия между ними, а видим в них три опоры одного живого татарского мира.</li>
+                    <li data-t="idea2"><strong>Регион — наш приоритет.</strong> Реальная сила строится снизу вверх. Нас интересуют конкретные дела и локальное развитие.</li>
+                    <li data-t="idea3"><strong>Гражданское единство.</strong> Вера — личный выбор каждого. Светские и религиозные участники абсолютно равны.</li>
+                    <li data-t="idea4"><strong>Живая культура.</strong> Традиция должна развиваться, а не храниться под стеклом.</li>
+                    <li data-t="idea5"><strong>Созидание и легальность.</strong> Интеллект, образование, дисциплина и строгое соблюдение законов — наш единственный инструмент.</li>
                 </ul>
             </div>
         </div>
 
         <div class="spoiler-item">
-            <button class="spoiler-btn" data-t="btnIdeology">Неомишаризм</button>
+            <button class="spoiler-btn" data-t="btnNeo">Неотатаризм</button>
             <div class="spoiler-content">
-                <p><strong data-t="ideoIntro">Неомишаризм — концепция, лежащая в основе Ассоциации.</strong></p>
-                <p data-t="ideoText1">В современном мире локальные культуры всё чаще превращаются либо в формальность, либо в набор поверхностных стереотипов. Неомишаризм рассматривает культуру как живую среду, способную развиваться вместе со временем, а не существовать исключительно в рамках фольклора или музейного образа.</p>
-                <p data-t="ideoText2">Основой подхода являются:</p>
-                <ul class="ideology-list">
-                    <li data-t="ideoL1">взаимовыручка</li>
-                    <li data-t="ideoL2">самоорганизация</li>
-                    <li data-t="ideoL3">культурная преемственность</li>
-                    <li data-t="ideoL4">прагматичный взгляд на развитие сообщества</li>
+                <p data-t="neo1"><strong>Неотатаризм — идеологический фундамент Ассоциации.</strong></p>
+                <p data-t="neo2">Большинство локальных культур сегодня оказались перед выбором: раствориться в глобальном потоке или уйти в архаику. Оба пути ведут в тупик.</p>
+                <p data-t="neo3">Неотатаризм — это третий путь. Культура как живая среда, способная развиваться и давать человеку реальную опору. Четыре наши опоры:</p>
+                <ul style="list-style: disc; margin-left: 20px; margin-bottom: 15px;">
+                    <li data-t="neoL1"><strong>Историческая грамотность</strong> — трезвый взгляд на прошлое</li>
+                    <li data-t="neoL2"><strong>Личное развитие</strong> — образование, дисциплина</li>
+                    <li data-t="neoL3"><strong>Прагматизм</strong> — конкретные решения</li>
+                    <li data-t="neoL4"><strong>Солидарность</strong> — взаимная поддержка</li>
                 </ul>
-                <p data-t="ideoGoal">Главная цель — формирование сильного и устойчивого сообщества, способного сохранять свою идентичность в современном обществе.</p>
+                <p data-t="neo4">Неотатаризм не отвечает на вопрос «кем были наши предки». Он отвечает на вопрос <strong>«кем мы хотим быть»</strong>.</p>
             </div>
         </div>
 
         <div class="spoiler-item">
-            <button class="spoiler-btn" data-t="btnHistory">История</button>
+            <button class="spoiler-btn" data-t="btnPortrait">Портрет участника</button>
             <div class="spoiler-content">
-                <p data-t="histText1">Историческое формирование мишарского сообщества связано с правобережьем Волги и регионом Мещеры.</p>
-                <p data-t="histText2">Многовековой статус военно-служилого сословия способствовал развитию высокой самоорганизации, мобильности, самостоятельности и внутренней сплочённости.</p>
-                
-                <div class="content-image-wrapper">
-                    <img src="Picsart_26-05-21_21-58-05-369.jpg" alt="Карта расселения мишар" class="content-image" loading="lazy">
-                    <div class="image-caption" data-t="mapCaption">Карта традиционного расселения мишар в Волго-Уральском регионе</div>
-                </div>
+                <p data-t="port1">Татар Ассоциациясе — для тех, кто:</p>
+                <ul class="custom-list">
+                    <li data-t="portL1">ощущает связь с татарской культурой, историей или языком</li>
+                    <li data-t="portL2">готов развиваться и вкладываться в сообщество</li>
+                    <li data-t="portL3">разделяет принципы легальности, уважения и созидания</li>
+                    <li data-t="portL4">хочет действовать, а не просто наблюдать</li>
+                </ul>
+                <p data-t="port2">Не важно, где ты живёшь, насколько хорошо знаешь язык и верующий ли ты человек. Важно — с кем ты и что ты делаешь.</p>
+            </div>
+        </div>
 
-                <h3 style="margin-bottom: 10px; font-size: 1.05rem;" data-t="histTableTitle">Исторические особенности</h3>
+        <div class="spoiler-item">
+            <button class="spoiler-btn" data-t="btnTable">Базовые принципы</button>
+            <div class="spoiler-content">
                 <div class="table-wrapper">
                     <table>
                         <thead>
@@ -477,62 +424,19 @@
                         <tbody>
                             <tr>
                                 <td data-t="tdOrg"><strong>Организация</strong></td>
-                                <td data-t="tdOrgDesc">Объединение по служилым городам: Касимов, Темников, Кадом</td>
+                                <td data-t="tdOrgDesc">Горизонтальные связи, взаимовыручка без лишней бюрократии</td>
                             </tr>
                             <tr>
-                                <td data-t="tdEco"><strong>Экономика</strong></td>
-                                <td data-t="tdEcoDesc">Вотчинное и поместное землевладение</td>
+                                <td data-t="tdPos"><strong>Позиционирование</strong></td>
+                                <td data-t="tdPosDesc">Строгая легальность, созидательный труд, отказ от радикализма</td>
                             </tr>
                             <tr>
-                                <td data-t="tdSelf"><strong>Самообеспечение</strong></td>
-                                <td data-t="tdSelfDesc">Самостоятельное обеспечение вооружением и конями</td>
+                                <td data-t="tdDev"><strong>Развитие</strong></td>
+                                <td data-t="tdDevDesc">Личностный рост каждого участника — образование, спорт, дисциплина</td>
                             </tr>
                             <tr>
-                                <td data-t="tdMil"><strong>Военное дело</strong></td>
-                                <td data-t="tdMilDesc">Охрана границ, строительство крепостей, формирование войск</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <div class="spoiler-item">
-            <button class="spoiler-btn" data-t="btnLanguage">Язык</button>
-            <div class="spoiler-content">
-                <p data-t="langText1">Западный (мишарский) диалект рассматривается как самостоятельная языковая система, сохранившая ряд древнетюркских особенностей.</p>
-                <p data-t="langText2">Языковые особенности — это не «искажение», а естественный процесс развития живой речи и культурной среды.</p>
-                
-                <h3 style="margin-bottom: 10px; font-size: 1.05rem; margin-top: 15px;" data-t="langTableTitle">Некоторые особенности говора</h3>
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th data-t="thPhenom">Явление</th>
-                                <th data-t="thDesc">Описание</th>
-                                <th data-t="thEx">Пример</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td data-t="tdTsokTitle"><strong>Цоканье</strong></td>
-                                <td data-t="tdTsokDesc">Переход [ч] в [ц]</td>
-                                <td data-t="tdTsokEx"><em>пыцак</em> вместо <em>пычак</em></td>
-                            </tr>
-                            <tr>
-                                <td data-t="tdYokTitle"><strong>Йоканье</strong></td>
-                                <td data-t="tdYokDesc">[й] вместо [җ]</td>
-                                <td data-t="tdYokEx"><em>йәй</em> вместо <em>җәй</em></td>
-                            </tr>
-                            <tr>
-                                <td data-t="tdVocTitle"><strong>Вокализм</strong></td>
-                                <td data-t="tdVocDesc">Неогубленный звук [а]</td>
-                                <td data-t="tdVocEx">более чёткое произношение</td>
-                            </tr>
-                            <tr>
-                                <td data-t="tdMorphTitle"><strong>Морфология</strong></td>
-                                <td data-t="tdMorphDesc">Особая форма намерения</td>
-                                <td data-t="tdMorphEx"><em>баргым кели</em> вместо <em>барасым килә</em></td>
+                                <td data-t="tdIden"><strong>Идентичность</strong></td>
+                                <td data-t="tdIdenDesc">Надрелигиозный союз на основе общей истории, культуры и языка</td>
                             </tr>
                         </tbody>
                     </table>
@@ -543,59 +447,54 @@
         <div class="spoiler-item">
             <button class="spoiler-btn" data-t="btnProj">Проекты</button>
             <div class="spoiler-content">
-                <p data-t="projText">Ассоциация находится на стадии формирования. В дальнейшем планируется запуск площадок для общения, публикации материалов и координации сообщества.</p>
+                <p data-t="projText">Ассоциация находится на стадии формирования. Планируется запуск площадок для координации сообщества:</p>
                 <ul class="projects-list">
-                    <li>📢 <strong>Telegram-канал</strong> — <span data-t="proj1">новости, статьи и материалы</span></li>
-                    <li>💬 <strong>Telegram-чат</strong> — <span data-t="proj2">общение и взаимопомощь</span></li>
-                    <li>📱 <strong>TikTok / YouTube</strong> — <span data-t="proj3">короткий видеоконтент и медиа</span></li>
+                    <li>📢 <strong>Telegram-канал</strong> — <span data-t="proj1">главная трибуна: аналитика и концептуальные материалы</span></li>
+                    <li>💬 <strong>Telegram-чат</strong> — <span data-t="proj2">ядро сообщества: живое общение и нетворкинг</span></li>
+                    <li>📱 <strong>TikTok / YouTube</strong> — <span data-t="proj3">визуальный авангард: эстетика и популяризация смыслов</span></li>
                 </ul>
             </div>
         </div>
 
         <div class="social-links">
-            <a href="https://t.me/ТВОЙ_КАНАЛ" target="_blank" class="social-btn btn-tg">
-                <svg class="social-icon" viewBox="0 0 24 24">
-                    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a5.96 5.96 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-                </svg>
+            <a href="#" target="_blank" class="social-btn btn-tg">
                 <span data-t="btnJoinTg">Перейти в Telegram</span>
             </a>
-            <a href="https://tiktok.com/@ТВОЙ_ПРОФИЛЬ" target="_blank" class="social-btn btn-tt">
-                <svg class="social-icon" viewBox="0 0 24 24">
-                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93v7.2c0 1.63-.48 3.27-1.4 4.6-1.57 2.27-4.32 3.52-7.05 3.1-2.73-.41-5.06-2.38-5.91-5.04-.84-2.63-.2-5.59 1.68-7.66 1.87-2.07 4.81-3.02 7.46-2.48v4.06c-1.27-.37-2.72-.18-3.79.68-1.13.91-1.65 2.45-1.26 3.86.38 1.38 1.57 2.44 2.99 2.7 1.45.26 3.01-.2 3.98-1.28 1.03-1.15 1.41-2.76 1.41-4.28V0h-2.18z"/>
-                </svg>
+            <a href="#" target="_blank" class="social-btn btn-tt">
                 <span data-t="btnJoinTt">TikTok</span>
             </a>
         </div>
-
     </div>
 
     <div class="infobox">
-        <img src="Picsart_26-05-21_18-09-08-571.png" alt="Флаг Мишарской Ассоциации" class="infobox-flag">
-        <h2 data-t="infoTitle">Мишарская Ассоциация</h2>
+        <div class="infobox-flag"></div> <!-- Вставь сюда свой тег img -->
+        <h2 data-t="infoTitle">Татар Ассоциациясе</h2>
         <div class="infobox-row">
             <div class="infobox-label" data-t="lblType">Тип</div>
-            <div class="infobox-value" data-t="valType">Сообщество / Организация</div>
+            <div class="infobox-value" data-t="valType">Гражданское сообщество</div>
         </div>
         <div class="infobox-row">
             <div class="infobox-label" data-t="lblBase">Основа</div>
-            <div class="infobox-value" data-t="valBase">Самоорганизация, взаимовыручка, прагматизм</div>
+            <div class="infobox-value" data-t="valBase">Самоорганизация, прагматизм</div>
         </div>
         <div class="infobox-row">
-            <div class="infobox-label" data-t="lblGoal">Главная цель</div>
-            <div class="infobox-value" data-t="valGoal">Консолидация и развитие</div>
+            <div class="infobox-label" data-t="lblGoal">Цель</div>
+            <div class="infobox-value" data-t="valGoal">Консолидация и развитие региона</div>
         </div>
         <div class="infobox-row">
             <div class="infobox-label" data-t="lblConcept">Концепция</div>
-            <div class="infobox-value" data-t="valConcept">Неомишаризм</div>
+            <div class="infobox-value" data-t="valConcept">Неотатаризм</div>
+        </div>
+        <div class="infobox-row">
+            <div class="infobox-label" data-t="lblPrin">Принцип</div>
+            <div class="infobox-value" data-t="valPrin">Созидание, легальность</div>
         </div>
     </div>
-
 </div>
 
 <button id="scrollTopBtn" class="scroll-to-top-btn" title="Наверх">↑</button>
 
 <script>
-    // Логика аккордеона
     document.querySelectorAll('.spoiler-btn').forEach(button => {
         button.addEventListener('click', () => {
             const item = button.parentElement;
@@ -605,287 +504,186 @@
         });
     });
 
-    // Словари переводов
     const translations = {
         ru: {
-            mainTitle: "Мишарская Ассоциация",
-            leadText: "<strong>Мишарская Ассоциация</strong> — современное сообщество, созданное для объединения мишар, развития культуры, языка и взаимной поддержки в условиях XXI века.",
-            btnPrinciples: "Основные идеи",
-            p1: "Идентичность не должна исчезать.",
-            p2: "Культура может быть современной.",
-            p3: "Язык — часть живого мышления.",
-            p4: "Сообщество важнее изоляции.",
-            p5: "Традиция должна развиваться, а не консервироваться.",
-            btnIdeology: "Неомишаризм",
-            ideoIntro: "Неомишаризм — концепция, лежащая в основе Ассоциации.",
-            ideoText1: "В современном мире локальные культуры всё чаще превращаются либо в формальность, либо в набор поверхностных стереотипов. Неомишаризм рассматривает культуру как живую среду, способную развиваться вместе со временем, а не существовать исключительно в рамках фольклора или музейного образа.",
-            ideoText2: "Основой подхода являются:",
-            ideoL1: "взаимовыручка",
-            ideoL2: "самоорганизация",
-            ideoL3: "культурная преемственность",
-            ideoL4: "прагматичный взгляд на развитие сообщества",
-            ideoGoal: "Главная цель — формирование сильного и устойчивого сообщества, способного сохранять свою идентичность в современном обществе.",
-            btnHistory: "История",
-            histText1: "Историческое формирование мишарского сообщества связано с правобережьем Волги и регионом Мещеры.",
-            histText2: "Многовековой статус военно-служилого сословия способствовал развитию высокой самоорганизации, мобильности, самостоятельности и внутренней сплочённости.",
-            mapCaption: "Карта традиционного расселения мишар в Волго-Уральском регионе",
-            histTableTitle: "Исторические особенности",
+            mainTitle: "Татар Ассоциациясе",
+            leadText: "<strong>Татар Ассоциациясе</strong> — гражданское сообщество татарской молодёжи, построенное не на ностальгии, а на действии. Мы не музей и не политическая партия. Мы — люди, которые считают свою идентичность силой, а не архивом.",
+            btnContext: "Контекст",
+            ctx1: "Татарская культура сегодня находится под давлением с двух сторон: с одной — размывание и ассимиляция, с другой — консервация и превращение в фольклор. Ни то ни другое не даёт народу будущего.",
+            ctx2: "Молодое поколение теряет связь с идентичностью не потому, что она ему неинтересна — а потому что ей не предлагают современного языка и живого сообщества.",
+            ctx3: "Татар Ассоциациясе создана именно для этого: стать точкой сборки для тех, кто готов строить, а не только помнить.",
+            btnIdeas: "Основные идеи",
+            idea1: "<strong>Единство в многообразии.</strong> Татарский народ исторически складывается из нескольких крупных ветвей. Мы не стираем различия между ними, а видим в них три опоры одного живого татарского мира.",
+            idea2: "<strong>Регион — наш приоритет.</strong> Реальная сила строится снизу вверх. Нас интересуют конкретные дела и локальное развитие.",
+            idea3: "<strong>Гражданское единство.</strong> Вера — личный выбор каждого. Светские и религиозные участники абсолютно равны.",
+            idea4: "<strong>Живая культура.</strong> Традиция должна развиваться, а не храниться под стеклом.",
+            idea5: "<strong>Созидание и легальность.</strong> Интеллект, образование, дисциплина и строгое соблюдение законов — наш единственный инструмент.",
+            btnNeo: "Неотатаризм",
+            neo1: "<strong>Неотатаризм — идеологический фундамент Ассоциации.</strong>",
+            neo2: "Большинство локальных культур сегодня оказались перед выбором: раствориться в глобальном потоке или уйти в архаику. Оба пути ведут в тупик.",
+            neo3: "Неотатаризм — это третий путь. Культура как живая среда, способная развиваться и давать человеку реальную опору. Четыре наши опоры:",
+            neoL1: "<strong>Историческая грамотность</strong> — трезвый взгляд на прошлое",
+            neoL2: "<strong>Личное развитие</strong> — образование, дисциплина",
+            neoL3: "<strong>Прагматизм</strong> — конкретные решения",
+            neoL4: "<strong>Солидарность</strong> — взаимная поддержка",
+            neo4: "Неотатаризм не отвечает на вопрос «кем были наши предки». Он отвечает на вопрос <strong>«кем мы хотим быть»</strong>.",
+            btnPortrait: "Портрет участника",
+            port1: "Татар Ассоциациясе — для тех, кто:",
+            portL1: "ощущает связь с татарской культурой, историей или языком",
+            portL2: "готов развиваться и вкладываться в сообщество",
+            portL3: "разделяет принципы легальности, уважения и созидания",
+            portL4: "хочет действовать, а не просто наблюдать",
+            port2: "Не важно, где ты живёшь, насколько хорошо знаешь язык и верующий ли ты человек. Важно — с кем ты и что ты делаешь.",
+            btnTable: "Базовые принципы",
             thCrit: "Критерий",
             thChar: "Характеристика",
             tdOrg: "<strong>Организация</strong>",
-            tdOrgDesc: "Объединение по служилым городам: Касимов, Төмән, Кадом",
-            tdEco: "<strong>Экономика</strong>",
-            tdEcoDesc: "Вотчинное и поместное землевладение",
-            tdSelf: "<strong>Самообеспечение</strong>",
-            tdSelfDesc: "Самостоятельное обеспечение вооружением и конями",
-            tdMil: "<strong>Военное дело</strong>",
-            tdMilDesc: "Охрана границ, строительство крепостей, формирование войск",
-            btnLanguage: "Язык",
-            langText1: "Западный (мишарский) диалект рассматривается как самостоятельная языковая система, сохранившая ряд древнетюркских особенностей.",
-            langText2: "Языковые особенности — это не «искажение», а естественный процесс развития живой речи и культурной среды.",
-            langTableTitle: "Некоторые особенности говора",
-            thPhenom: "Явление",
-            thDesc: "Описание",
-            thEx: "Пример",
-            tdTsokTitle: "<strong>Цоканье</strong>",
-            tdTsokDesc: "[ч] авазының [ц]-га күчүе",
-            tdTsokEx: "<em>пыцак</em> вместо <em>пычак</em>",
-            tdYokTitle: "<strong>Йоканье</strong>",
-            tdYokDesc: "[җ] урынына [й]",
-            tdYokEx: "<em>йәй</em> вместо <em>җәй</em>",
-            tdVocTitle: "<strong>Вокализм</strong>",
-            tdVocDesc: "Иренләшмәгән [а] авазы",
-            tdVocEx: "более чёткое произношение",
-            tdMorphTitle: "<strong>Морфология</strong>",
-            tdMorphDesc: "Особая форма намерения",
-            tdMorphEx: "<em>barğım kely</em> вместо <em>барасым килә</em>",
-            btnProj: "Проектлар",
-            projText: "Ассоциация находится на стадии формирования. В дальнейшем планируется запуск площадок для общения, публикации материалов и координации сообщества.",
-            proj1: "новости, статьи и материалы",
-            proj2: "общение и взаимопомощь",
-            proj3: "короткий видеоконтент и медиа",
-            infoTitle: "Мишарская Ассоциация",
+            tdOrgDesc: "Горизонтальные связи, взаимовыручка без лишней бюрократии",
+            tdPos: "<strong>Позиционирование</strong>",
+            tdPosDesc: "Строгая легальность, созидательный труд, отказ от радикализма",
+            tdDev: "<strong>Развитие</strong>",
+            tdDevDesc: "Личностный рост каждого участника — образование, спорт, дисциплина",
+            tdIden: "<strong>Идентичность</strong>",
+            tdIdenDesc: "Надрелигиозный союз на основе общей истории, культуры и языка",
+            btnProj: "Проекты",
+            projText: "Ассоциация находится на стадии формирования. Планируется запуск площадок для координации сообщества:",
+            proj1: "главная трибуна: аналитика и концептуальные материалы",
+            proj2: "ядро сообщества: живое общение и нетворкинг",
+            proj3: "визуальный авангард: эстетика и популяризация смыслов",
+            infoTitle: "Татар Ассоциациясе",
             lblType: "Тип",
-            valType: "Сообщество / Организация",
+            valType: "Гражданское сообщество",
             lblBase: "Основа",
-            valBase: "Самоорганизация, взаимовыручка, прагматизм",
-            lblGoal: "Главная цель",
-            valGoal: "Консолидация и развитие",
+            valBase: "Самоорганизация, прагматизм",
+            lblGoal: "Цель",
+            valGoal: "Консолидация и развитие региона",
             lblConcept: "Концепция",
-            valConcept: "Неомишаризм",
+            valConcept: "Неотатаризм",
+            lblPrin: "Принцип",
+            valPrin: "Созидание, легальность",
             btnJoinTg: "Перейти в Telegram",
-            btnJoinTt: "Смотреть в TikTok"
+            btnJoinTt: "TikTok"
         },
         en: {
-            mainTitle: "Mishar Association",
-            leadText: "<strong>Mishar Association</strong> is a modern community created to unite Mishars, develop culture, language, and provide mutual support in the 21st century.",
-            btnPrinciples: "Main Ideas",
-            p1: "Identity must not disappear.",
-            p2: "Culture can be modern.",
-            p3: "Language is a part of living thought.",
-            p4: "Community is more important than isolation.",
-            p5: "Traditions must evolve, not be conserved.",
-            btnIdeology: "Neomisharism",
-            ideoIntro: "Neomisharism is the concept underlying the Association.",
-            ideoText1: "In the modern world, local cultures increasingly turn into either a formality or a set of superficial stereotypes. Neomisharism views culture as a living environment capable of evolving with time, rather than existing exclusively within folklore or a museum image.",
-            ideoText2: "The approach is based on:",
-            ideoL1: "mutual assistance",
-            ideoL2: "self-organization",
-            ideoL3: "cultural continuity",
-            ideoL4: "a pragmatic view on community development",
-            ideoGoal: "The main goal is the formation of a strong and resilient community capable of preserving its identity in modern society.",
-            btnHistory: "History",
-            histText1: "The historical formation of the Mishar community is connected with the right bank of the Volga and the Meshchera region.",
-            histText2: "The centuries-old status of a military-serving estate contributed to the development of high self-organization, mobility, independence, and internal cohesion.",
-            mapCaption: "Map of traditional Mishar settlement in the Volga-Ural region",
-            histTableTitle: "Historical Features",
+            mainTitle: "Tatar Association",
+            leadText: "<strong>Tatar Association</strong> is a civic community of Tatar youth built on action, not nostalgia. We are not a museum or a political party. We are people who consider identity a strength, not an archive.",
+            btnContext: "Context",
+            ctx1: "Tatar culture today is under pressure: assimilation on one side, and conservation into folklore on the other. Neither gives the nation a future.",
+            ctx2: "The younger generation loses touch with identity not because they lack interest, but because they are not offered a modern language and a living community.",
+            ctx3: "Tatar Association was created precisely to become a gathering point for those ready to build, not just remember.",
+            btnIdeas: "Main Ideas",
+            idea1: "<strong>Unity in diversity.</strong> We do not erase differences between the branches of our people, but see them as pillars of a single living Tatar world.",
+            idea2: "<strong>Region is our priority.</strong> Real power is built from the bottom up. We focus on concrete actions and local development.",
+            idea3: "<strong>Civic unity.</strong> Faith is a personal choice. Secular and religious participants are absolutely equal.",
+            idea4: "<strong>Living culture.</strong> Tradition must evolve, not be kept under glass.",
+            idea5: "<strong>Creation and legality.</strong> Intellect, education, discipline, and strict compliance with laws are our tools.",
+            btnNeo: "Neotatarism",
+            neo1: "<strong>Neotatarism is the ideological foundation.</strong>",
+            neo2: "Most local cultures face a choice: dissolve in globalization or retreat into archaism. Both are dead ends.",
+            neo3: "Neotatarism is the third way. Culture as a living environment. Our four pillars:",
+            neoL1: "<strong>Historical literacy</strong> — a sober look at the past",
+            neoL2: "<strong>Personal development</strong> — education, discipline",
+            neoL3: "<strong>Pragmatism</strong> — concrete solutions",
+            neoL4: "<strong>Solidarity</strong> — mutual support",
+            neo4: "Neotatarism doesn't answer 'who were our ancestors', it answers <strong>'who we want to be'</strong>.",
+            btnPortrait: "Participant Portrait",
+            port1: "Tatar Association is for those who:",
+            portL1: "feel a connection to Tatar culture, history, or language",
+            portL2: "are ready to develop and contribute to the community",
+            portL3: "share the principles of legality, respect, and creation",
+            portL4: "want to act, not just observe",
+            port2: "It doesn't matter where you live or your level of faith. What matters is who you are with and what you do.",
+            btnTable: "Basic Principles",
             thCrit: "Criterion",
             thChar: "Characteristic",
             tdOrg: "<strong>Organization</strong>",
-            tdOrgDesc: "Unification by serving cities: Kasimov, Temnikov, Kadom",
-            tdEco: "<strong>Economy</strong>",
-            tdEcoDesc: "Patrimonial and local land tenure",
-            tdSelf: "<strong>Self-provision</strong>",
-            tdSelfDesc: "Independent provision of weapons and horses",
-            tdMil: "<strong>Military affairs</strong>",
-            tdMilDesc: "Border guarding, fortress construction, troop formation",
-            btnLanguage: "Language",
-            langText1: "The Western (Mishar) dialect is considered an independent linguistic system that has preserved a number of ancient Turkic features.",
-            langText2: "Linguistic features are not a «distortion», but a natural process of the development of living speech and cultural environment.",
-            langTableTitle: "Some Features of the Dialect",
-            thPhenom: "Phenomenon",
-            thDesc: "Description",
-            thEx: "Example",
-            tdTsokTitle: "<strong>Tsokanye / Chokanye</strong>",
-            tdTsokDesc: "Transition of [ch] to [ts]",
-            tdTsokEx: "<em>pytsak</em> instead of <em>pychak</em>",
-            tdYokTitle: "<strong>Yokanye</strong>",
-            tdYokDesc: "[y] instead of [җ]",
-            tdYokEx: "<em>yәy</em> instead of <em>җәy</em>",
-            tdVocTitle: "<strong>Vocalism</strong>",
-            tdVocDesc: "Unrounded sound [a]",
-            tdVocEx: "clearer pronunciation",
-            tdMorphTitle: "<strong>Morphology</strong>",
-            tdMorphDesc: "Special form of intention",
-            tdMorphEx: "<em>bargym keli</em> instead of <em>barasym kilә</em>",
+            tdOrgDesc: "Horizontal ties, mutual assistance without bureaucracy",
+            tdPos: "<strong>Positioning</strong>",
+            tdPosDesc: "Strict legality, creative labor, rejection of radicalism",
+            tdDev: "<strong>Development</strong>",
+            tdDevDesc: "Personal growth of each participant — education, sports",
+            tdIden: "<strong>Identity</strong>",
+            tdIdenDesc: "Supra-religious union based on common history and language",
             btnProj: "Projects",
-            projText: "The Association is currently in its formative stage. In the future, it is planned to launch platforms for communication, publication of materials, and community coordination.",
-            proj1: "news, articles, and materials",
-            proj2: "communication and mutual assistance",
-            proj3: "short video content and media",
-            infoTitle: "Mishar Association",
+            projText: "The Association is in its formative stage. We plan to launch:",
+            proj1: "main tribune: analytics and conceptual materials",
+            proj2: "community core: live communication and networking",
+            proj3: "visual vanguard: aesthetics and media",
+            infoTitle: "Tatar Association",
             lblType: "Type",
-            valType: "Community / Organization",
+            valType: "Civic Community",
             lblBase: "Basis",
-            valBase: "Self-organization, mutual aid, pragmatism",
-            lblGoal: "Main Goal",
-            valGoal: "Consolidation and development",
+            valBase: "Self-organization, pragmatism",
+            lblGoal: "Goal",
+            valGoal: "Consolidation and regional development",
             lblConcept: "Concept",
-            valConcept: "Neomisharism",
+            valConcept: "Neotatarism",
+            lblPrin: "Principle",
+            valPrin: "Creation, legality",
             btnJoinTg: "Join Telegram",
-            btnJoinTt: "Watch on TikTok"
+            btnJoinTt: "TikTok"
         },
-        "ms-ts": {
-            mainTitle: "Мишәр Ассоциациясе",
-            leadText: "<strong>Мишәр Ассоциациясе</strong> — мишәрләрне берләштерү, мәдәниятне, телне үстерү һәм XXI гасыр шартларында үзара ярдәмләшү өцен төзелгән заманца җәмгыять.",
-            btnPrinciples: "Төп идеяләр",
-            p1: "Үзаң югалырга тиеш түгел.",
-            p2: "Мәдәният заманца була ала.",
-            p3: "Тел — тере фикерләүнең бер өлеше.",
-            p4: "Җәмгыять изоляциядән мөһимрәк.",
-            p5: "Традиция катып калмыйца, үсәргә тиеш.",
-            btnIdeology: "Неомишаризм",
-            ideoIntro: "Неомишаризм — Ассоциациянең нигезендә яткан концепция.",
-            ideoText1: "Заманца дөньяда җирле мәдәниятләр еш кына формальлеккә яки өстән-өстән генә булган стереотипларга әйләнәлей. Неомишаризм мәдәнияткә бары тик фольклор яки музей образы кысаларында гына яшәмицә, заман белән бергә үсәргә сәләтле тере мохит итеп карый.",
-            ideoText2: "Карашның нигезе булып торалар:",
-            ideoL1: "үзара ярдәмләшү",
-            ideoL2: "үз-үзеңне оештыру",
-            ideoL3: "мәдәни дәвамцанлык",
-            ideoL4: "җәмгыять үсешенә прагматик караш",
-            ideoGoal: "Төп максат — заманца җәмгыятьтә үзенең үзаңын саклап калырга сәләтле көцле һәм тотрыклы җәмгыять формалаштыру.",
-            btnHistory: "Тарих",
-            histText1: "Мишәр җәмгыятенең тарихи формалашуы Иделнең уң яры һәм Мещера төбәге белән бәйле.",
-            histText2: "Күп гасырлык хәрби-йомышлы катлау статусы югары үзоешу, мобильлек, мөстәкыйльлек һәм эцке бердәмлек үсешенә булышлык иткән.",
-            mapCaption: "Идел-Урал төбәгендә мишәрләрнең гадәти яшәү урыннары картасы",
-            histTableTitle: "Тарихи үзенцәлекләр",
+        tat: {
+            mainTitle: "Татар Ассоциациясе",
+            leadText: "<strong>Татар Ассоциациясе</strong> — ностальгиягә түгел, ә гамәлгә корылган татар яшьләренең гражданнар җәмгыяте. Без музей да, сәяси партия дә түгел. Үз кемлеген архив түгел, ә көч дип санаучы кешеләр без.",
+            btnContext: "Контекст",
+            ctx1: "Бүгенге көндә татар мәдәнияте ике яктан басым астында: бер яктан — ассимиляция, икенче яктан — фольклорга әйләнү. Боларның берсе дә халыкка киләчәк бирми.",
+            ctx2: "Яшь буын кемлеге белән элемтәне ул аңа кызык булмаганга түгел, ә аңа заманча тел һәм тере җәмгыять тәкъдим ителмәгәнгә югалта.",
+            ctx3: "Татар Ассоциациясе нәкъ менә шуның өчен төзелде: үткәнне генә истә тотарга түгел, ә төзергә әзер булганнар өчен берләшү ноктасы булырга.",
+            btnIdeas: "Төп идеяләр",
+            idea1: "<strong>Төрлелектә бердәмлек.</strong> Без халкыбызның тармаклары арасындагы аермаларны бетермибез, ә аларда бер тере татар дөньясының терәкләрен күрәбез.",
+            idea2: "<strong>Төбәк — безнең өстенлек.</strong> Чын көч астан өскә төзелә. Безне конкрет эшләр һәм локаль үсеш кызыксындыра.",
+            idea3: "<strong>Гражданнар бердәмлеге.</strong> Дин — һәркемнең шәхси сайлавы. Дөньяви һәм дини катнашучылар тигез хокуклы.",
+            idea4: "<strong>Тере мәдәният.</strong> Традиция пыяла астында сакланырга түгел, ә үсәргә тиеш.",
+            idea5: "<strong>Иҗат һәм законлылык.</strong> Интеллект, белем, тәртип һәм законнарны үтәү — безнең бердәнбер коралыбыз.",
+            btnNeo: "Неотатаризм",
+            neo1: "<strong>Неотатаризм — Ассоциациянең идеологик нигезе.</strong>",
+            neo2: "Күпчелек җирле мәдәниятләр бүген сайлау алдында калды: глобаль агымда эреп югалу яки архаикага китү. Ике юл да турыкка илтә.",
+            neo3: "Неотатаризм — ул өченче юл. Мәдәният кешегә чын таяныч бирә алырлык тере мохит буларак. Дүрт терәгебез:",
+            neoL1: "<strong>Тарихи грамоталылык</strong> — үткәнгә салкын акыл белән карау",
+            neoL2: "<strong>Шәхси үсеш</strong> — белем, тәртип",
+            neoL3: "<strong>Прагматизм</strong> — конкрет карарлар",
+            neoL4: "<strong>Теләктәшлек</strong> — үзара ярдәмләшү",
+            neo4: "Неотатаризм «бабаларыбыз кем булган» дигән сорауга түгел, ә <strong>«без кем булырга телибез»</strong> дигән сорауга җавап бирә.",
+            btnPortrait: "Катнашучы портреты",
+            port1: "Татар Ассоциациясе — түбәндәгеләр өчен:",
+            portL1: "татар мәдәнияте, тарихы яки теле белән бәйләнеш сизүчеләр",
+            portL2: "үсәргә һәм җәмгыятькә өлеш кертергә әзер булучылар",
+            portL3: "законлылык, хөрмәт һәм иҗат принципларын уртаклашучылар",
+            portL4: "күзәтеп кенә торырга түгел, ә хәрәкәт итәргә теләүчеләр",
+            port2: "Кайда яшәвең яки дингә мөнәсәбәтең мөһим түгел. Мөһиме — син кем белән һәм нәрсә эшлисең.",
+            btnTable: "Төп принциплар",
             thCrit: "Критерий",
             thChar: "Сыйфатлама",
             tdOrg: "<strong>Оешма</strong>",
-            tdOrgDesc: "Йомышлы шәһәрләр буенца берләшү: Касыйм, Төмән, Кадым",
-            tdEco: "<strong>Икътисад</strong>",
-            tdEcoDesc: "Вотчина һәм алпавыт җир биләмәләре",
-            tdSelf: "<strong>Үз-үзеңне тәэмин итү</strong>",
-            tdSelfDesc: "Корал һәм атлар белән мөстәкыйль тәэмин итү",
-            tdMil: "<strong>Хәрби эш</strong>",
-            tdMilDesc: "Цикләрне саклау, крепостьлар төзү, гаскәрләр оештыру",
-            btnLanguage: "Тел",
-            langText1: "Көнбатыш (мишәр) диалекты кайбер борынгы төрки үзенцәлекләрне саклап калган мөстәкыйль тел системасы буларак карала.",
-            langText2: "Тел үзенцәлекләре — ул «бозу» түгел, ә тере сөйләм һәм мәдәни мохит үсешенең табигый процессы.",
-            langTableTitle: "Сөйләмнең кайбер үзенцәлекләре",
-            thPhenom: "Күренеш",
-            thDesc: "Тасвирлама",
-            thEx: "Мисал",
-            tdTsokTitle: "<strong>Цоканье</strong>",
-            tdTsokDesc: "[ч] авазының [ц]-га күцүе",
-            tdTsokEx: "<em>пычак</em> урынына <em>пыцак</em>",
-            tdYokTitle: "<strong>Йоканье</strong>",
-            tdYokDesc: "[җ] урынына [й]",
-            tdYokEx: "<em>җәй</em> урынына <em>йәй</em>",
-            tdVocTitle: "<strong>Вокализм</strong>",
-            tdVocDesc: "Иренләшмәгән [а] авазы",
-            tdVocEx: "ацыкрак әйтелеш",
-            tdMorphTitle: "<strong>Морфология</strong>",
-            tdMorphDesc: "Ниятне белдерүнең үзенцәлекле формасы",
-            tdMorphEx: "<em>барасым килә</em> урынына <em>баргым кели</em>",
+            tdOrgDesc: "Горизонталь элемтәләр, бюрократиясез үзара ярдәмләшү",
+            tdPos: "<strong>Позиция</strong>",
+            tdPosDesc: "Законлылык, иҗади хезмәт, радикальлектән баш тарту",
+            tdDev: "<strong>Үсеш</strong>",
+            tdDevDesc: "Һәр катнашучының шәхси үсеше — белем, спорт, тәртип",
+            tdIden: "<strong>Кемлек</strong>",
+            tdIdenDesc: "Уртак тарих һәм тел нигезендә дин өсте берлеге",
             btnProj: "Проектлар",
-            projText: "Ассоциация формалашу этабында. Киләцәктә аралашу, материаллар бастыру һәм җәмгыятьне координацияләү өцен мәйданцыклар ацу планлаштырыла.",
-            proj1: "яңалыклар, мәкаләләр һәм материаллар",
-            proj2: "аралашу һәм үзара ярдәм",
-            proj3: "кыска видеоконтент һәм медиа",
-            infoTitle: "Мишәр Ассоциациясе",
+            projText: "Ассоциация формалашу чорында. Җәмгыятьне координацияләү өчен мәйданчыклар эшләтеп җибәрү планлаштырыла:",
+            proj1: "төп трибуна: аналитика һәм концептуаль материаллар",
+            proj2: "җәмгыять үзәге: тере аралашу һәм нетворкинг",
+            proj3: "визуаль авангард: эстетика һәм мәгънәләрне популярлаштыру",
+            infoTitle: "Татар Ассоциациясе",
             lblType: "Төре",
-            valType: "Җәмгыять / Оешма",
+            valType: "Гражданнар җәмгыяте",
             lblBase: "Нигез",
-            valBase: "Үз-үзеңне оештыру, үзара ярдәм, прагматизм",
-            lblGoal: "Төп максат",
-            valGoal: "Берләшү һәм үсеш",
+            valBase: "Үз-үзеңне оештыру, прагматизм",
+            lblGoal: "Максат",
+            valGoal: "Берләшү һәм төбәкне үстерү",
             lblConcept: "Концепция",
-            valConcept: "Неомишаризм",
-            btnJoinTg: "Telegram-га күчү",
-            btnJoinTt: "TikTok-та карау"
-        },
-        "ms-ch": {
-            mainTitle: "Мишәр Ассоциациясе",
-            leadText: "<strong>Мишәр Ассоциациясе</strong> — мишәрләрне берләштерү, мәдәниятне, телне үстерү һәм XXI гасыр шартларында үзара ярдәмләшү өчен төзелгән заманча җәмгыять.",
-            btnPrinciples: "Төп идеяләр",
-            p1: "Үзаң югалырга тиеш түгел.",
-            p2: "Мәдәният заманча була ала.",
-            p3: "Тел — тере фикерләүнең бер өлеше.",
-            p4: "Җәмгыять изоляциядән мөһимрәк.",
-            p5: "Традиция катып калмыйча, үсәргә тиеш.",
-            btnIdeology: "Неомишаризм",
-            ideoIntro: "Неомишаризм — Ассоциациянең нигезендә яткан концепция.",
-            ideoText1: "Заманча дөньяда җирле мәдәниятләр еш кына формальлеккә яки өстән-өстән генә булган стереотипларга әйләнәләр. Неомишаризм мәдәнияткә бары тик фольклор яки музей образы кысаларында гына яшәмичә, заман белән бергә үсәргә сәләтле тере мохит итеп карый.",
-            ideoText2: "Карашның нигезе булып торалар:",
-            ideoL1: "үзара ярдәмләшү",
-            ideoL2: "үз-үзеңне оештыру",
-            ideoL3: "мәдәни дәвамчанлык",
-            ideoL4: "җәмгыять үсешенә прагматик караш",
-            ideoGoal: "Төп максат — заманча җәмгыятьтә үзенең үзаңын саклап калырга сәләтле көчле һәм тотрыклы җәмгыять формалаштыру.",
-            btnHistory: "Тарих",
-            histText1: "Мишәр җәмгыятенең тарихи формалашуы Иделнең уң яры һәм Мещера төбәге белән бәйле.",
-            histText2: "Күп гасырлык хәрби-йомышлы катлау статусы югары үзоешу, мобильлек, мөстәкыйльлек һәм эчке бердәмлек үсешенә булышлык иткән.",
-            mapCaption: "Идел-Урал төбәгендә мишәрләрнең гадәти яшәү урыннары картасы",
-            histTableTitle: "Тарихи үзенчәлекләр",
-            thCrit: "Критерий",
-            thChar: "Сыйфатлама",
-            tdOrg: "<strong>Оешма</strong>",
-            tdOrgDesc: "Йомышлы шәһәрләр буенча берләшү: Касыйм, Төмән, Кадым",
-            tdEco: "<strong>Икътисад</strong>",
-            tdEcoDesc: "Вотчина һәм алпавыт җир биләмәләре",
-            tdSelf: "<strong>Үз-үзеңне тәэмин итү</strong>",
-            tdSelfDesc: "Корал һәм атлар белән мөстәкыйль тәэмин итү",
-            tdMil: "<strong>Хәрби эш</strong>",
-            tdMilDesc: "Чикләрне саклау, крепостьлар төзү, гаскәрләр оештыру",
-            btnLanguage: "Тел",
-            langText1: "Көнбатыш (мишәр) диалекты кайбер борынгы төрки үзенчәлекләрне саклап калган мөстәкыйль тел системасы буларак карала.",
-            langText2: "Тел үзенчәлекләре — ул «бозу» түгел, ә тере сөйләм һәм мәдәни мохит үсешенең табигый процессы.",
-            langTableTitle: "Сөйләмнең кайбер үзенчәлекләре",
-            thPhenom: "Күренеш",
-            thDesc: "Тасвирлама",
-            thEx: "Мисал",
-            tdTsokTitle: "<strong>Цоканье</strong>",
-            tdTsokDesc: "[ч] авазының [ц]-га күчүе",
-            tdTsokEx: "<em>пычак</em> урынына <em>пыцак</em>",
-            tdYokTitle: "<strong>Йоканье</strong>",
-            tdYokDesc: "[җ] урынына [й]",
-            tdYokEx: "<em>җәй</em> урынына <em>йәй</em>",
-            tdVocTitle: "<strong>Вокализм</strong>",
-            tdVocDesc: "Иренләшмәгән [а] авазы",
-            tdVocEx: "ачыкрак әйтелеш",
-            tdMorphTitle: "<strong>Морфология</strong>",
-            tdMorphDesc: "Ниятне белдерүнең үзенчәлекле формасы",
-            tdMorphEx: "<em>барасым килә</em> урынына <em>баргым кели</em>",
-            btnProj: "Проектлар",
-            projText: "Ассоциация формалашу этабында. Киләчәктә аралашу, материаллар бастыру һәм җәмгыятьне координацияләү өчен мәйданчыклар ачу планлаштырыла.",
-            proj1: "яңалыклар, мәкаләләр һәм материаллар",
-            proj2: "аралашу һәм үзара ярдәм",
-            proj3: "кыска видеоконтент һәм медиа",
-            infoTitle: "Мишарская Ассоциация",
-            lblType: "Төре",
-            valType: "Җәмгыять / Оешма",
-            lblBase: "Нигез",
-            valBase: "Үз-үзеңне оештыру, үзара ярдәм, прагматизм",
-            lblGoal: "Төп максат",
-            valGoal: "Берләшү һәм үсеш",
-            lblConcept: "Концепция",
-            valConcept: "Неомишаризм",
+            valConcept: "Неотатаризм",
+            lblPrin: "Принцип",
+            valPrin: "Иҗат, законлылык",
             btnJoinTg: "Telegram-га күчү",
             btnJoinTt: "TikTok-та карау"
         }
     };
 
-    // Функция обновления текстового контента
     const updateTexts = (lang) => {
         document.querySelectorAll('[data-t]').forEach(el => {
             const key = el.getAttribute('data-t');
@@ -895,29 +693,25 @@
         });
     };
 
-    // Функция переключения активной кнопки
     const setActiveButton = (lang) => {
         document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
         const activeBtn = document.querySelector(`.lang-btn[data-lang="${lang}"]`);
         if (activeBtn) activeBtn.classList.add('active');
     };
 
-    // Инициализация языка при загрузке страницы
     const savedLang = localStorage.getItem('selectedLanguage') || 'ru';
     updateTexts(savedLang);
     setActiveButton(savedLang);
 
-    // Слушатель на кнопки переключения
     document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             const targetLang = btn.getAttribute('data-lang');
-            localStorage.setItem('selectedLanguage', targetLang); // Сохраняем выбор в localStorage
+            localStorage.setItem('selectedLanguage', targetLang);
             setActiveButton(targetLang);
             updateTexts(targetLang);
         });
     });
 
-    // Автоматическое управление кнопкой "Наверх" при скролле
     const scrollTopBtn = document.getElementById("scrollTopBtn");
 
     window.addEventListener("scroll", () => {
